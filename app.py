@@ -9,9 +9,9 @@ def homepage():
     '''this function displays the homepage and message for how to find the data
     return: message for homepage
     '''
-    return "Hello, this is the homepage for the leisure time data. " \
-    "To see the most common activitiy that people spend their time on for a certain age add a '/' to " \
-    "this URL followed by the age you would like to look at (age options: 18, 23, 40, 56, 57, 71, 80)."
+    return "Hello, this is the homepage for the leisure time data. To see the most common activitiy" \
+    " that people spend their time on for a certain age add a '/' to this URL followed by the age " \
+    "you would like to look at (age options: 18, 23, 40, 56, 57, 71, 80)."
 
 @app.route('/<int:age>', strict_slashes=False)
 def get_top_activity(age):
@@ -26,13 +26,13 @@ def page_not_found(e):
     '''this function and error handler gives the user a message when they encounter a 404 error
     '''
     base_url = request.host_url.rstrip('/')
-    return f"Sorry, wrong format, do this instead: {base_url}/*insert age* for example {base_url}/23"
+    return f"Wrong format, do this instead: {base_url}/*insert age* for example {base_url}/23"
 
 @app.errorhandler(500)
 def python_bug(e):
     '''this function and error handler gives the user a message when they encounter a 500 error
     '''
-    return "Sorry, that age is invalid, choose a valid age based on the small dataset: 18, 23, 40, 56, 57, 71, 80)"
+    return "Invalid age, choose a valid age based on the small dataset: 18, 23, 40, 56, 57, 71, 80)"
 
 if __name__ == '__main__':
     app.run(port=8000)
