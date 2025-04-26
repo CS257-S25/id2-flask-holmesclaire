@@ -9,9 +9,10 @@ def homepage():
     '''this function displays the homepage and message for how to find the data
     return: message for homepage
     '''
-    return "Hello, this is the homepage for the leisure time data. To see the most common activitiy" \
-    " that people spend their time on for a certain age add a '/' to this URL followed by the age " \
-    "you would like to look at (age options: 18, 23, 40, 56, 57, 71, 80)."
+    return "Hello, this is the homepage for the leisure time data. " \
+    "To see the most common activitiy that people spend their time on for a certain age" \
+    " add a '/' to this URL followed by the age you would like to look at " \
+    "(age options: 18, 23, 40, 56, 57, 71, 80)."
 
 @app.route('/<int:age>', strict_slashes=False)
 def get_top_activity(age):
