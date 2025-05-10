@@ -35,5 +35,5 @@ class TestApp(unittest.TestCase):
     def test_404_error(self):
         '''test 404 error returns the correct error message'''
         response = self.app.get('/invalid')
-        self.assertIn(b"404 Not Found: The requested URL was not found on the server.", 
+        self.assertIn(b"404 Not Found: The requested URL was not found on the server.",
                       response.data)
