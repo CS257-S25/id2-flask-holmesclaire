@@ -7,11 +7,6 @@ import app as app
 class TestApp(unittest.TestCase):
     '''class for tests for app.py'''
 
-    def setUp(self):
-        '''set up for testing'''
-        app.config['TESTING']= True
-        self.app = app.test_client()
-
     def test_homepage(self):
         '''test homepage returns the correct message'''
         response = self.app.get('/')
