@@ -33,7 +33,8 @@ def page_not_found(e):
 def python_bug(e):
     '''this function and error handler gives the user a message when they encounter a 500 error
     '''
-    return f"{e} Invalid age, choose a valid age based on the small dataset: 18, 23, 40, 56, 57, 71, 80"
+    return f"{e} Invalid age, choose a valid age based on the small dataset: " \
+            "18, 23, 40, 56, 57, 71, 80"
 
 if __name__ == '__main__':
-    app.run(port=8000)
+    app.run()
