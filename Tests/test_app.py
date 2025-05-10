@@ -28,3 +28,9 @@ class TestApp(unittest.TestCase):
         '''test get_top_activity returns the correct error message for invalid age'''
         response = self.app.get('/100')
         self.assertEqual(b"Invalid age, choose a valid age based on the small dataset: 18, 23, 40, 56, 57, 71, 80", response.data)
+
+    def test_404_error(self, route):
+        '''test 404 error returns the correct error message'''
+        response = self.app.get(route)
+        self.assertEqual(response.status_code, 404)
+        self.assertIn(b"404 Not Found: The requested URL was not found on the server. Wrong format, do this instead: ", response.data)

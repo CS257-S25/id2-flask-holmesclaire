@@ -27,13 +27,13 @@ def page_not_found(e):
     '''this function and error handler gives the user a message when they encounter a 404 error
     '''
     base_url = request.host_url.rstrip('/')
-    return f"Wrong format, do this instead: {base_url}/*insert age* for example {base_url}/23"
+    return f"{e}. Wrong format, do this instead: {base_url}/*insert age* for example {base_url}/23"
 
 @app.errorhandler(500)
 def python_bug(e):
     '''this function and error handler gives the user a message when they encounter a 500 error
     '''
-    return "Invalid age, choose a valid age based on the small dataset: 18, 23, 40, 56, 57, 71, 80"
+    return f"{e} Invalid age, choose a valid age based on the small dataset: 18, 23, 40, 56, 57, 71, 80"
 
 if __name__ == '__main__':
     app.run(port=8000)
